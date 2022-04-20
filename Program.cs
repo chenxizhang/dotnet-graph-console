@@ -5,7 +5,11 @@ var clientId = args.Length > 0 ? args[0] : "fc341661-31f0-4a4f-8f18-0afb8a56a98a
 var scopes = new[] { "User.Read", "Mail.Read" };
 
 var client = PublicClientApplicationBuilder.Create(clientId).WithRedirectUri("http://localhost").Build();
-var token = await client.AcquireTokenInteractive(scopes).ExecuteAsync();
+var token = await client.AcquireTokenWithDeviceCode(scopes, (result) =>
+{
+    Console.WriteLine($"{result.Message}");
+    return Task.FromResult(0);
+}).ExecuteAsync();
 
 var graphClient = new GraphServiceClient(new DelegateAuthenticationProvider((request) =>
 {
