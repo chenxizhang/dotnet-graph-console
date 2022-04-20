@@ -13,6 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag chenxizhang/dotnet-graph-console
-      run: docker login -u chenxizhang -p SECERTS.DOCKER_PASSWORD
-      run: docker publish chenxizhang/dotnet-graph-console
+      run: |
+        docker build . --file Dockerfile --tag chenxizhang/dotnet-graph-console
+        docker login -u chenxizhang -p SECERTS.DOCKER_PASSWORD
+        docker publish chenxizhang/dotnet-graph-console
