@@ -1,10 +1,10 @@
 # https://hub.docker.com/_/microsoft-dotnet
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /
+WORKDIR /app
 
 # copy csproj and restore as distinct layers
 COPY *.csproj .
-RUN dotnet restore /p:EnableDefaultItems=false
+RUN dotnet restore
 
 # copy and publish app and libraries
 COPY . .
