@@ -16,4 +16,4 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag chenxizhang/dotnet-graph-console
         docker login -u chenxizhang -p ${{secrets.DOCKER_PASSWORD}}
-        docker publish chenxizhang/dotnet-graph-console
+        docker push chenxizhang/dotnet-graph-console
