@@ -12,6 +12,7 @@
 1. 你可以将其克隆到本地，然后通过 `dotnet run` 命令运行，也可以通过 `dotnet run 51ea05e5-3998-4e1d-b4dc-0090f422da20` 这样的语法运行，这里的参数指的是你自定义的 Azure AD application的ID，如果没有提供，则会使用我默认提供的一个。
 1. 如果你本地没有安装 `dotnet` 的 SDK 和 runtime，你可以直接通过 `docker run --rm chenxizhang/dotnet-graph-console` 这样的方式运行，如果需要指定Azure AD application的ID，则按类似这样的语法 `docker run --rm chenxizhang/dotnet-graph-console 51ea05e5-3998-4e1d-b4dc-0090f422da20` 运行即可。
 `
+1. 这个项目我还做成了一个 dotnet 命令行工具，你可以通过 `dotnet tool install --global graphconsole --version 1.0.0` 进行安装，并且通过 `graphsay` 这样的命令执行它
 
 ## 如何实现
 
